@@ -9,10 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fortawesome/free-brands-svg-icons": "^6.6.0",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "@headlessui/react": "^2.1.8",
     "@heroicons/react": "^2.1.5",
     "@radix-ui/react-slot": "^1.1.0",
-    "class-variance-authority": "^0.7.0",
+    "aos": "^2.3.4",
     "clsx": "^2.1.1",
     "lucide-react": "^0.445.0",
     "next": "14.2.13",
@@ -23,7 +25,10 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@types/node": "22.7.2",
+    "@types/react": "18.3.9",
     "postcss": "^8",
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^3.4.1",
+    "typescript": "5.6.2"
   }
 }

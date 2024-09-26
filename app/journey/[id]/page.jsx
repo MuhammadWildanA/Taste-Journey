@@ -1,6 +1,6 @@
 "use client";
 
-import { provs } from "@/app/data/provs";
+import {provs} from "./../../_data/provs";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import React from "react";
@@ -10,6 +10,7 @@ import "swiper/css";
 import "swiper/css/effect-cards";
 import "./journey.css";
 import { EffectCards } from "swiper/modules";
+import Link from 'next/link'
 
 const JourneyDetail = ({ params }) => {
   const { id } = params;
@@ -68,12 +69,12 @@ const JourneyDetail = ({ params }) => {
         <div className="w-full md:w-1/2 lg:w-6/12 bg-slate-950 bg-opacity-70 p-5 rounded-md">
           <h2 className="text-5xl font-bold text-center mb-5">{prov.name}</h2>
           <p
-            className="text-base"
+            className="text-base max-md:text-center"
             dangerouslySetInnerHTML={{ __html: prov.article }}
           ></p>
-          <a href="#read-more" className="text-blue-600 hover:underline">
+          <Link href={`/journey/${prov.id}/detail`} className="text-blue-600 hover:underline">
             Selengkapnya
-          </a>
+          </Link>
         </div>
       </div>
     </div>

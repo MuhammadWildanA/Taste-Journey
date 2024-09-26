@@ -1,8 +1,7 @@
 // Hampers.jsx
 import React from "react";
-import { provs } from "../data/provs";
+import { provs } from "../_data/provs";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 const Journey = () => {
@@ -29,9 +28,9 @@ const Journey = () => {
               <h2 className="text-lg font-semibold text-center">{prov.name}</h2>
               <p className="text-gray-300 mb-4 text-center">{prov.capt}</p>
               <Link href={`/journey/${prov.id}`}>
-                <Button className="bg-slate-200 text-gray-900 py-2 px-4 rounded hover:bg-slate-300 transition-all duration-300 w-full">
+                <button className="bg-slate-200 text-gray-900 py-2 px-4 rounded hover:bg-slate-300 transition-all duration-300 w-full">
                   Go
-                </Button>
+                </button>
               </Link>
             </div>
           ))}

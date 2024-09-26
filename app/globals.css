@@ -1,6 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* app/globals.css */
+@import 'aos/dist/aos.css';
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -78,5 +82,114 @@ html{
   left: 0;
   background: linear-gradient(to top,rgb(0,0,0),rgba(0,0,0,0));
   z-index: 2;
+}
+
+@font-face {
+  font-family: 'poppins-black'; /* Nama custom font */
+  src: url('./_fonts/Poppins-Black.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'poppins-black-italic'; /* Nama custom font */
+  src: url('./_fonts/Poppins-BlackItalic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'poppins-bold'; /* Nama custom font */
+  src: url('./_fonts/Poppins-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'poppins-bold-italic'; /* Nama custom font */
+  src: url('./_fonts/Poppins-BoldItalic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'poppins-extra-bold'; /* Nama custom font */
+  src: url('./_fonts/Poppins-ExtraBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'poppins-extra-bold-italic'; /* Nama custom font */
+  src: url('./_fonts/Poppins-ExtraBoldItalic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'poppins-extra-light'; /* Nama custom font */
+  src: url('./_fonts/Poppins-ExtraLight.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'poppins-extra-light-italic'; /* Nama custom font */
+  src: url('./_fonts/Poppins-ExtraLightItalic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'poppins-italic'; /* Nama custom font */
+  src: url('./_fonts/Poppins-Italic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'poppins-light'; /* Nama custom font */
+  src: url('./_fonts/Poppins-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'poppins-light-italic'; /* Nama custom font */
+  src: url('./_fonts/Poppins-LightItalic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'poppins-medium'; /* Nama custom font */
+  src: url('./_fonts/Poppins-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'poppins-medium-italic'; /* Nama custom font */
+  src: url('./_fonts/Poppins-MediumItalic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'poppins-regular'; /* Nama custom font */
+  src: url('./_fonts/Poppins-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'poppins-semi-bold'; /* Nama custom font */
+  src: url('./_fonts/Poppins-SemiBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'poppins-semi-bold-italic'; /* Nama custom font */
+  src: url('./_fonts/Poppins-SemiBoldItalic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'poppins-thin'; /* Nama custom font */
+  src: url('./_fonts/Poppins-Thin.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'poppins-thin-italic'; /* Nama custom font */
+  src: url('./_fonts/Poppins-ThinItalic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'cataraman-black'; /* Nama custom font */
+  src: url('./_fonts/Catamaran-Black.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'cataraman-bold'; /* Nama custom font */
+  src: url('./_fonts/Catamaran-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'cataraman-extrabold'; /* Nama custom font */
+  src: url('./_fonts/Catamaran-ExtraBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'cataraman-extra-light'; /* Nama custom font */
+  src: url('./_fonts/Catamaran-ExtraLight.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'cataraman-light'; /* Nama custom font */
+  src: url('./_fonts/Catamaran-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'cataraman-medium'; /* Nama custom font */
+  src: url('./_fonts/Catamaran-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'cataraman-regular'; /* Nama custom font */
+  src: url('./_fonts/Catamaran-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'cataraman-semi-bold'; /* Nama custom font */
+  src: url('./_fonts/Catamaran-SemiBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'cataraman-thin'; /* Nama custom font */
+  src: url('./_fonts/Catamaran-Thin.ttf') format('truetype');
 }
 

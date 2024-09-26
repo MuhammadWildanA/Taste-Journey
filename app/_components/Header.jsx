@@ -1,6 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
+import Image from "next/image";
+import { provs } from "../_data/provs";
+import { usePathname } from "next/navigation";
+
+
 import {
   Dialog,
   DialogPanel,
@@ -26,63 +31,230 @@ import {
   PhoneIcon,
   PlayCircleIcon,
 } from "@heroicons/react/20/solid";
-import Image from "next/image";
 
-const products = [
-  {
-    name: "Analytics",
-    description: "Get a better understanding of your traffic",
-    href: "#",
-    icon: ChartPieIcon,
-  },
-  {
-    name: "Engagement",
-    description: "Speak directly to your customers",
-    href: "#",
-    icon: CursorArrowRaysIcon,
-  },
-  {
-    name: "Security",
-    description: "Your customers’ data will be safe and secure",
-    href: "#",
-    icon: FingerPrintIcon,
-  },
-  {
-    name: "Integrations",
-    description: "Connect with third-party tools",
-    href: "#",
-    icon: SquaresPlusIcon,
-  },
-  {
-    name: "Automations",
-    description: "Build strategic funnels that will convert",
-    href: "#",
-    icon: ArrowPathIcon,
-  },
-];
+// const products = [
+//   {
+//     name: "Jawa Timur",
+//     description: "Get a better understanding of your traffic",
+//     href: "#",
+//   },
+//   {
+//     name: "Jawa Tengah",
+//     description: "Get a better understanding of your traffic",
+//     href: "#",
+//   },
+//   {
+//     name: "Jawa Barat",
+//     description: "Get a better understanding of your traffic",
+//     href: "#",
+//   },
+// ];
 const callsToAction = [
   { name: "Watch demo", href: "#", icon: PlayCircleIcon },
   { name: "Contact sales", href: "#", icon: PhoneIcon },
 ];
 
+const products = provs.map((prov) => ({
+  name: prov.name, // Adjust this according to your actual data structure
+  href: `/journey/${prov.id}`, // You can modify this if you have specific URLs
+}));
+
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname(); // Gunakan usePathname untuk mendapatkan URL path saat ini
+  const isHomePage = pathname === "/";
+
+
+  // Handle scroll event to change background color
+  useEffect(() => {
+    const handleScroll = () => {
+      console.log(window.scrollY);
+      if (window.scrollY > 500) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <header className="bg-white">
-      {/* ************************************** */}
+    <header
+      className={`fixed z-10 w-full top-0`}>
       <nav
         aria-label="Global"
-        className="fixed top-0 z-10 mx-auto flex w-full items-center justify-between p-3 px-8 bg-opacity-95 bg-gray-50"
+        className={`mx-auto flex w-full items-center justify-between p-3 px-8 transition-colors duration-500 ${
+  isHomePage ? (isScrolled ? "bg-white" : "bg-transparent") : "bg-white"
+}`}
       >
-        {/* ************************************** */}
-        <div className="flex lg:flex-1 ">
-          <a href="/" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
-            <Image alt="" src="/logo.png" className="h-10" width={70} height={0} />
+
+
+        <div className="hidden lg:flex">
+          <a
+            href="#"
+            className="text-xl font-bold leading-6 mx-auto text-gray-950"
+          >
+            Jawara
+            <span aria-hidden="true" className="text-emerald-600">
+              Team
+            </span>
           </a>
         </div>
-        {/* ************************************** */}
+
+        <div className="flex">
+          <a href="/" className="">
+            <span className="sr-only">Your Company</span>
+            <Image
+              alt=""
+              src="/logo.png"
+              className="h-10"
+              width={100}
+              height={100}
+            />
+          </a>
+        </div>
+
+
+        {/* Kiri */}
+        <PopoverGroup className="hidden lg:flex lg:gap-x-12">
+          <Popover className="relative">
+            <PopoverButton className="flex items-center gap-x-1 text-lg font-semibold leading-6 text-gray-900">
+              Journey
+              <ChevronDownIcon
+                aria-hidden="true"
+                className="h-5 w-5 flex-none text-gray-400"
+              />
+            </PopoverButton>
+
+            <PopoverPanel
+              transition
+              className="absolute -left-1.5 -translate-x-2/4 top-full w-44 z-10 mt-3 overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5 transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
+            >
+              <div className="p-4">
+                {products.map((item) => (
+                  <div
+                    key={item.name}
+                    className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
+                  >
+                    <div className="flex-auto">
+                      <a
+                        href={item.href}
+                        className="block font-semibold text-gray-900"
+                      >
+                        {item.name}
+                        <span className="absolute inset-0" />
+                      </a>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </PopoverPanel>
+          </Popover>
+        </PopoverGroup>
+
+                {/* Tengah */}
+        {/* <PopoverGroup className="hidden lg:flex lg:gap-x-12">
+          <Popover className="relative">
+            <PopoverButton className="flex items-center gap-x-1 text-lg font-semibold leading-6 text-gray-900">
+              Journey
+              <ChevronDownIcon
+                aria-hidden="true"
+                className="h-5 w-5 flex-none text-gray-400"
+              />
+            </PopoverButton>
+
+            <PopoverPanel
+              transition
+              className="absolute left-1/2 -translate-x-1/2 top-full w-screen max-w-md z-10 mt-3 overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5 transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
+            >
+              <div className="p-4">
+                {products.map((item) => (
+                  <div
+                    key={item.name}
+                    className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
+                  >
+                    <div className="flex-auto">
+                      <a
+                        href={item.href}
+                        className="block font-semibold text-gray-900"
+                      >
+                        {item.name}
+                        <span className="absolute inset-0" />
+                      </a>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </PopoverPanel>
+          </Popover>
+        </PopoverGroup> */}
+
+        {/* Default(Kanan) */}
+        {/* <PopoverGroup className="hidden lg:flex lg:gap-x-12">
+          <Popover className="relative">
+            <PopoverButton className="flex items-center gap-x-1 text-lg font-semibold leading-6 text-gray-900">
+              Journey
+              <ChevronDownIcon
+                aria-hidden="true"
+                className="h-5 w-5 flex-none text-gray-400"
+              />
+            </PopoverButton>
+
+            <PopoverPanel
+              transition
+              className="absolute top-full w-screen max-w-md z-10 mt-3 overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5 transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
+            >
+              <div className="p-4">
+                {products.map((item) => (
+                  <div
+                    key={item.name}
+                    className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
+                  >
+                    <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                      <item.icon
+                        aria-hidden="true"
+                        className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
+                      />
+                    </div>
+                    <div className="flex-auto">
+                      <a
+                        href={item.href}
+                        className="block font-semibold text-gray-900"
+                      >
+                        {item.name}
+                        <span className="absolute inset-0" />
+                      </a>
+                      <p className="mt-1 text-gray-600">{item.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
+                {callsToAction.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
+                  >
+                    <item.icon
+                      aria-hidden="true"
+                      className="h-5 w-5 flex-none text-gray-400"
+                    />
+                    {item.name}
+                  </a>
+                ))}
+              </div>
+            </PopoverPanel>
+          </Popover>
+        </PopoverGroup> */}
+
         <div className="flex lg:hidden">
           <button
             type="button"
@@ -93,28 +265,9 @@ const Header = () => {
             <Bars3Icon aria-hidden="true" className="h-6 w-6" />
           </button>
         </div>
-        {/* ************************************** */}
-        {/* <PopoverGroup className="hidden lg:flex lg:gap-x-12">
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Features
-          </a>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Marketplace
-          </a>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Company
-          </a>
-        </PopoverGroup> */}
-        {/* ************************************** */}
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" className="text-2xl font-bold leading-6 text-gray-900">
-            Jawara<span aria-hidden="true" className="text-emerald-600">Team</span>
-          </a>
-        </div>
-        {/* ************************************** */}
       </nav>
-      {/* ************************************** */}
-      {/* <Dialog
+
+      <Dialog
         open={mobileMenuOpen}
         onClose={setMobileMenuOpen}
         className="lg:hidden"
@@ -123,12 +276,8 @@ const Header = () => {
         <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
-              <img
-                alt=""
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                className="h-8 w-auto"
-              />
+              <span className="sr-only">Taste Journey</span>
+              <img alt="" src="/logo.png" className="h-8 w-auto" />
             </a>
             <button
               type="button"
@@ -151,7 +300,7 @@ const Header = () => {
                     />
                   </DisclosureButton>
                   <DisclosurePanel className="mt-2 space-y-2">
-                    {[...products, ...callsToAction].map((item) => (
+                    {[...products].map((item) => (
                       <DisclosureButton
                         key={item.name}
                         as="a"
@@ -163,38 +312,22 @@ const Header = () => {
                     ))}
                   </DisclosurePanel>
                 </Disclosure>
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Features
-                </a>
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Marketplace
-                </a>
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Company
-                </a>
               </div>
-              <div className="py-6">
+              <div className="py-6 text-center">
                 <a
                   href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  className="text-xl font-bold leading-6  text-gray-950"
                 >
-                  Log in
+                  Jawara
+                  <span aria-hidden="true" className="text-emerald-600">
+                    Team
+                  </span>
                 </a>
               </div>
             </div>
           </div>
         </DialogPanel>
-      </Dialog> */}
-      {/* ************************************** */}
+      </Dialog>
     </header>
   );
 };

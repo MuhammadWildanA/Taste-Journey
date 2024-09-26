@@ -1,10 +1,8 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import Bg from "../data/bg";
+import Bg from "../_data/bg";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-
 
 const banner = () => {
   // State untuk menyimpan URL gambar background
@@ -37,7 +35,7 @@ const banner = () => {
     <>
       <main className="relative flex h-screen w-full flex-col justify-center items-center">
         <div
-          className="absolute inset-0 custom-shadow"
+          className="absolute -z-10 inset-0 custom-shadow"
           style={{
             backgroundImage: `url(${backgroundImage})`,
             backgroundSize: "cover",
@@ -56,12 +54,12 @@ const banner = () => {
             src={"/assets/img/img_2.jpg"}
           /> */}
         </div>
-        <div className="z-10 flex flex-col items-center justify-center">
-          <p className="text-2xl max-w-5xl text-balance text-center mb-4 rounded-md text-white">Petualangan kuliner adalah perjalanan melintasi rasa dan budaya. Di setiap langkah, kamu menemukan cerita baru dalam setiap hidangan, mencicipi dunia dengan cara yang paling menggugah selera.</p>
+        <div data-aos="zoom-in" className="flex flex-col items-center justify-center">
+          <p className="text-3xl max-w-5xl text-balance text-center mb-4 rounded-md text-slate-50 max-lg:mx-2 max-md:mx-4" style={{ fontFamily: 'catamaran-regular, serif' }} >Petualangan kuliner adalah perjalanan melintasi rasa dan budaya. Di setiap langkah, kamu menemukan cerita baru dalam setiap hidangan, mencicipi dunia dengan cara yang paling menggugah selera.</p>
         <Link className="" href="#journey">
-          <Button className="text-xl p-6 hover:scale-105 transition shadow-lg" variant='outline'>
+          <button className="text-xl p-4 leading-3 hover:scale-105 transition shadow-lg border-2 bg-slate-100 border-gray-800 rounded">
             Start Journey
-          </Button>
+          </button>
         </Link>
         </div>
       </main>
