@@ -19,12 +19,12 @@ const About = () => {
         className="bg-gray-100 p-6 rounded-lg shadow-lg text-center">
           <img
             className="h-48 w-48 mx-auto rounded-full mb-4"
-            src="/febriyan.png"
+            src="/hafizh.png"
             sizes='cover'
           />
           <h4 className="text-lg font-semibold text-gray-900">Hafizh Arrasyiid Syahbana</h4>
           <p className="text-sm text-gray-500 mt-2">
-          1st on the List provides highly effective PPC advertising for every budget including Google PPC Ads.
+          Nama saya Hafizh Arrasyiid Syahbana, seorang pengembang aplikasi mobile. Saat ini, saya bersekolah di SMKN 1 Bangil. Selain itu, saya juga menyukai buah nanas.
           </p>
         </div>
 
@@ -35,10 +35,10 @@ const About = () => {
         className="bg-gray-100 p-6 rounded-lg shadow-lg text-center">
           <img
             className="h-48 w-48 mx-auto rounded-full mb-4"
-            src="https://via.placeholder.com/666"
+            src="/wildan.png"
           />
           <h4 className="text-lg font-semibold text-gray-900">Muhammad Wildan Abdillah</h4>
-          <p className="text-sm text-gray-500 mt-2">Hello World</p>
+          <p className="text-sm text-gray-500 mt-2">Lorem ipsum dolor sit amet.<br></br> Assalamualaikum have we ever met?</p>
         </div>
 
         {/* Card 3 */}

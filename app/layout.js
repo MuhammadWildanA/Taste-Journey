@@ -9,6 +9,9 @@ const jost = Jost({ subsets: ['latin'] });
 export const metadata = {
   title: "Taste Journey",
   description: "Taste Journey",
+  icons: {
+    icon: '/logo.png', // Menunjukkan path ke favicon
+  },
 };
 
 export default function RootLayout({ children }) {
