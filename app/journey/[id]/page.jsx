@@ -24,7 +24,7 @@ const JourneyDetail = ({ params }) => {
 
   return (
     <div
-      className="min-h-screen  dark:bg-gray-900 text-white dark:text-gray-100"
+      className="min-h-screen overflow-hidden dark:bg-gray-900 text-white dark:text-gray-100"
       style={{
         backgroundImage: `url(${prov.image})`,
         backgroundSize: "cover",
@@ -35,17 +35,18 @@ const JourneyDetail = ({ params }) => {
     >
       <div className="container py-16 mx-auto px-4 md:px-8 lg:px-16 flex flex-col md:flex-row justify-between items-center min-h-screen">
         {/* Left Side (Image) */}
-        <div className="w-full md:w-1/2 lg:w-5/12 max-md:mb-5">
+        <div data-aos="fade-right" className="w-full md:w-1/2 lg:w-5/12 max-md:mb-5">
           {prov.makanan && prov.makanan.length > 0 ? (
             <Swiper
               effect={"cards"}
               grabCursor={true}
               modules={[EffectCards]}
               className="mySwiper"
+              
             >
               {prov.makanan.map((item, index) => (
-                <SwiperSlide key={index}>
-                  <div className="flex flex-col h-full items-center">
+                <SwiperSlide key={index} >
+                  <div className="flex flex-col h-full items-center ">
                     <Image
                       src={item.foto}
                       className="h-80 w-96"
@@ -66,7 +67,7 @@ const JourneyDetail = ({ params }) => {
         </div>
 
         {/* Right Side (Text) */}
-        <div className="w-full md:w-1/2 lg:w-6/12 bg-slate-950 bg-opacity-70 p-5 rounded-md">
+        <div data-aos-duration="2000" data-aos="fade-left" className="w-full md:w-1/2 lg:w-6/12 bg-slate-950 bg-opacity-70 p-5 rounded-md">
           <h2 className="text-5xl font-bold text-center mb-5">{prov.name}</h2>
           <p
             className="text-base max-md:text-center"

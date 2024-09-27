@@ -8,8 +8,10 @@ import 'aos/dist/aos.css';
 const ClientComponent = () => {
   useEffect(() => {
     AOS.init({
-      duration: 1200, // Durasi animasi
-      once: true, // Animasi hanya dijalankan sekali
+      duration: 1000,
+      once: false, // Animasi hanya dijalankan sekali
+      mirror: true,
+      easing: "ease"
     });
 
     // Refresh AOS pada setiap render

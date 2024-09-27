@@ -10,8 +10,7 @@ const Footer = () => {
         
         {/* Deskripsi */}
         <p className="text-gray-400 mb-4">
-          Lorem ipsum dolor sit amet consectetur adipiscing elit. Ratione veniam
-          amet autem sunt, perspiciatis nemo.
+        Temukan dunia melalui rasa, satu hidangan, sejuta cerita.
         </p>
         
         {/* Ikon media sosial */}

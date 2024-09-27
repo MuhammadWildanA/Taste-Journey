@@ -6,28 +6,24 @@ import Link from "next/link";
 
 const banner = () => {
   // State untuk menyimpan URL gambar background
-  const [backgroundImage, setBackgroundImage] = useState(
-    "/assets/img/img_2.jpg"
-  );
-  const [opacity, setOpacity] = useState(1); // State untuk mengatur opacity
+  const [backgroundImage, setBackgroundImage] = useState(Bg[0]); // Set the first image as the initial background
+  const [opacity, setOpacity] = useState(1); // State for opacity
 
   useEffect(() => {
-
-    // Index untuk melacak gambar saat ini
     let currentBg = 0;
 
-    // Interval untuk mengganti background setiap 3 detik
+    // Interval to change the background every 7 seconds
     const intervalId = setInterval(() => {
-      setOpacity(0); // Mulai fade out
+      setOpacity(0); // Fade out
 
       setTimeout(() => {
-        currentBg = (currentBg + 1) % Bg.length; // Looping background
-        setBackgroundImage(Bg[currentBg]); // Set gambar baru
-        setOpacity(1); // Fade in gambar baru
-      }, 500); // Durasi fade out
-    }, 7000); // Ganti gambar setiap 3 detik
+        currentBg = (currentBg + 1) % Bg.length; // Cycle through Bg array
+        setBackgroundImage(Bg[currentBg]); // Set the new background image
+        setOpacity(1); // Fade in the new image
+      }, 500); // Duration of fade-out
+    }, 5000); // Switch background every 7 seconds
 
-    // Clean up interval saat komponen di-unmount
+    // Clean up the interval when the component unmounts
     return () => clearInterval(intervalId);
   }, []);
 
@@ -54,10 +50,10 @@ const banner = () => {
             src={"/assets/img/img_2.jpg"}
           /> */}
         </div>
-        <div data-aos="zoom-in" className="flex flex-col items-center justify-center">
-          <p className="text-3xl max-w-5xl text-balance text-center mb-4 rounded-md text-slate-50 max-lg:mx-2 max-md:mx-4" style={{ fontFamily: 'catamaran-regular, serif' }} >Petualangan kuliner adalah perjalanan melintasi rasa dan budaya. Di setiap langkah, kamu menemukan cerita baru dalam setiap hidangan, mencicipi dunia dengan cara yang paling menggugah selera.</p>
+        <div className="flex flex-col items-center justify-center">
+          <p data-aos="zoom-in" className="text-3xl max-w-5xl text-balance text-center mb-4 rounded-md text-slate-50 max-lg:mx-2 max-md:mx-4" style={{ fontFamily: 'catamaran-regular, serif' }} >Petualangan kuliner adalah perjalanan melintasi rasa dan budaya. Di setiap langkah, kamu menemukan cerita baru dalam setiap hidangan, mencicipi dunia dengan cara yang paling menggugah selera.</p>
         <Link className="" href="#journey">
-          <button className="text-xl p-4 leading-3 hover:scale-105 transition shadow-lg border-2 bg-slate-100 border-gray-800 rounded">
+          <button data-aos="zoom-in-up" data-aos-duration="1500" className="text-xl p-4 leading-3 hover:scale-105 transition shadow-lg border-2 bg-slate-100 border-gray-800 rounded">
             Start Journey
           </button>
         </Link>

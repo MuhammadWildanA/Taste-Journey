@@ -15,21 +15,25 @@ const Journey = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-8 w-full px-4">
           {provs.map((prov) => (
             <div
+              data-aos="zoom-in-down"
               key={prov.id}
-              className="border rounded-lg shadow-md p-4 bg-gray-800 border-gray-700 transition duration-500"
+              className="border rounded-lg shadow-md p-4 bg-gray-800 border-gray-700 transition duration-200 hover:scale-105"
             >
-              <Image
-                src={prov.image}
-                alt={prov.name}
-                className="rounded-lg mb-3 h-60"
-                width={1000}
-                height={0}
-              />
-              <h2 className="text-lg font-semibold text-center">{prov.name}</h2>
-              <p className="text-gray-300 mb-4 text-center">{prov.capt}</p>
               <Link href={`/journey/${prov.id}`}>
+                <Image
+                  src={prov.image}
+                  alt={prov.name}
+                  className="rounded-lg mb-3 h-60"
+                  width={1000}
+                  height={0}
+                />
+                <h2 className="text-lg font-semibold text-center">
+                  {prov.name}
+                </h2>
+                <p className="text-gray-300 mb-4 text-center">{prov.imgDetail}</p>
+
                 <button className="bg-slate-200 text-gray-900 py-2 px-4 rounded hover:bg-slate-300 transition-all duration-300 w-full">
-                  Go
+                  {prov.capt}
                 </button>
               </Link>
             </div>

@@ -5,7 +5,6 @@ import Image from "next/image";
 import { provs } from "../_data/provs";
 import { usePathname } from "next/navigation";
 
-
 import {
   Dialog,
   DialogPanel,
@@ -65,7 +64,6 @@ const Header = () => {
   const pathname = usePathname(); // Gunakan usePathname untuk mendapatkan URL path saat ini
   const isHomePage = pathname === "/";
 
-
   // Handle scroll event to change background color
   useEffect(() => {
     const handleScroll = () => {
@@ -86,20 +84,21 @@ const Header = () => {
   }, []);
 
   return (
-    <header
-      className={`fixed z-10 w-full top-0`}>
+    <header className={`fixed z-10 w-full top-0`}>
       <nav
         aria-label="Global"
         className={`mx-auto flex w-full items-center justify-between p-3 px-8 transition-colors duration-500 ${
-  isHomePage ? (isScrolled ? "bg-white" : "bg-transparent") : "bg-white"
-}`}
+          isHomePage
+            ? isScrolled
+              ? "bg-white shadow-xl"
+              : "bg-transparent"
+            : "shadow-xl bg-white"
+        }`}
       >
-
-
         <div className="hidden lg:flex">
           <a
-            href="#"
-            className="text-xl font-bold leading-6 mx-auto text-gray-950"
+            href="/about-us"
+            className={`text-xl font-bold leading-6 mx-auto ${isHomePage ? isScrolled ? "text-gray-950" : "text-white" : "text-gray-950"} text-gray-950`}
           >
             Jawara
             <span aria-hidden="true" className="text-emerald-600">
@@ -113,7 +112,7 @@ const Header = () => {
             <span className="sr-only">Your Company</span>
             <Image
               alt=""
-              src="/logo.png"
+              src={`${isHomePage ? isScrolled ? "/logo.png" : "/logo2.png" : "/logo.png"}`}
               className="h-10"
               width={100}
               height={100}
@@ -121,11 +120,10 @@ const Header = () => {
           </a>
         </div>
 
-
         {/* Kiri */}
         <PopoverGroup className="hidden lg:flex lg:gap-x-12">
           <Popover className="relative">
-            <PopoverButton className="flex items-center gap-x-1 text-lg font-semibold leading-6 text-gray-900">
+            <PopoverButton className={`flex items-center gap-x-1 text-lg font-semibold leading-6 ${isHomePage ? isScrolled ? "text-gray-950" : "text-white" : "text-gray-950"}`}>
               Journey
               <ChevronDownIcon
                 aria-hidden="true"
@@ -159,7 +157,7 @@ const Header = () => {
           </Popover>
         </PopoverGroup>
 
-                {/* Tengah */}
+        {/* Tengah */}
         {/* <PopoverGroup className="hidden lg:flex lg:gap-x-12">
           <Popover className="relative">
             <PopoverButton className="flex items-center gap-x-1 text-lg font-semibold leading-6 text-gray-900">
