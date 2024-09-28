@@ -1,24 +1,59 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# **Taste Journey - Web Design Documentation**
 
-## Getting Started
+## **Table of Contents**
+- [Perkenalan](#perkenalan)
+- [Fitur](#fitur)
+- [Requirements](#requirements)
+- [How to Run](#how-to-run)
+- [Screenshots](#screenshots)
+- [Website](#website)
+- [Kontak](#kontak)
 
-First, run the development server:
+## **perkenalan**
+**Taste Journey** 
+website ini mencoba memperkenalkan makanan-makanan lokal Indonesia
 
+---
+
+## **fitur**
+- **memilih daerah**: user dapat memilih daerah untuk melihat makanan-makanan khas pada daerah tersebut.
+  saat ini hanya ada Jawa Timur, Jawa Barat dan Jawa Tengah. Untuk kedepannya kami akan berusaha menambah dan mengembangkan website ini lebih baik dan lebih akurat
+
+---
+
+## **Requirements**
+Sebelum melakukan run, pastikan tools dibawah ini terinstall di komputer kalian:
+- [Node.js](https://nodejs.org/)
+- [npm](https://www.npmjs.com/) (Node Package Manager)
+- [Git](https://git-scm.com/)
+
+---
+
+## **How to Run**
+untuk menjalankan projek secara lokal, ikuti arahan dibawah:
+
+### 1. Clone Repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/MuhWildanA/taste-journey.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Navigate to the Project Directory:
+```bash
+cd taste-journey
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### 3. Install Dependencies:
+```bash
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### 4. Start the Development Server:
+```bash
+npm run dev
+```
+setelah melakukan run, server dapat di akses di [http://localhost:3000](http://localhost:3000). Buka link nya di browser.
+
+---
 
 ## Deploy on Vercel
 
@@ -26,7 +61,6 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-# taste-journey
 
 # website ini kami kembangkan menggunakan 
   -NextJS 
@@ -35,11 +69,16 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
   -Shadcn UI
   -AOS
   -pemberi bantuan dan solusi setia ChatGPT
+
+  ---
+
 # font yang digunakan
   - Jost
   - Poppins
   - Catamaran
   - hitchcut
+
+  ---
 
 # ====asset-source====
 # bg home 
@@ -48,6 +87,9 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
   - https://www.indonesia.travel/content/dam/indtravelrevamp/en/trip-ideas/the-ultimate-guide-to-must-try-indonesian-food/1.jpg
   - https://images.unsplash.com/photo-1707999251954-2a4abc6e1f35?q=80&w=1960&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
   - https://www.eatnow.id/wp-content/uploads/2022/12/mie-lendir-khas-riau-scaled.webp
+
+  ---
+
 # Jawa Barat 
   bg: https://disparbud.jabarprov.go.id/curug-ibun-majalengka/
 # foto-foto makanan 
@@ -60,6 +102,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
  - siomay: https://resepkoki.id/resep/resep-siomay-ikan-bandung/
  - doclang: https://voinews.id/indonesian/index.php/berita-internasional/item/33309-doclang-dari-bogor
  - tahu sumedang: https://id.pinterest.com/pin/580401470751309847/
+
+ ---
   
 # Jawa Tengah
  bg: https://kids.grid.id/read/473319939/mengenal-bagian-bagian-candi-borobudur-yang-jadi-situs-warisan-dunia-unesco?page=all
@@ -74,6 +118,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - tahu gimbal: https://radarbanyumas.disway.id/read/85256/tahu-gimbal-makanan-khas-legendaris-semarang-yang-wajib-dicoba
 - tengkleng: https://www.facebook.com/Maspion.Square.Surabaya73/posts/tengkleng-adalah-masakan-sejenis-sup-dengan-bahan-utama-iga-sapisejarah-tengklen/266911881739944/?locale=hi_IN
 - nasi gudeg: https://kr.pinterest.com/pin/864480091005770778/
+
+---
  
  # Jawa Timur
   bg: https://www.pexels.com/id-id/foto/matahari-terbenam-melihat-gunung-berapi-lahar-5505532/
@@ -86,3 +132,12 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
   - lodeh: https://id.pinterest.com/pin/364862007285572038/
   - klepon: https://id.pinterest.com/pin/824510644281366969/
   - gethuk lindri: https://id.pinterest.com/pin/99501473013718060/
+
+  ---
+
+  ## **Contact**
+hubungi kami jika ada pertanyaan:
+
+- **Email**: mw300306@gmail.com
+
+---
