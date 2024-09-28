@@ -9,13 +9,13 @@
 - [Website](#website)
 - [Kontak](#kontak)
 
-## **perkenalan**
+## **Perkenalan**
 **Taste Journey** 
 website ini mencoba memperkenalkan makanan-makanan lokal Indonesia
 
 ---
 
-## **fitur**
+## **Fitur**
 - **memilih daerah**: user dapat memilih daerah untuk melihat makanan-makanan khas pada daerah tersebut.
   saat ini hanya ada Jawa Timur, Jawa Barat dan Jawa Tengah. Untuk kedepannya kami akan berusaha menambah dan mengembangkan website ini lebih baik dan lebih akurat
 
@@ -53,6 +53,14 @@ npm run dev
 ```
 setelah melakukan run, server dapat di akses di [http://localhost:3000](http://localhost:3000). Buka link nya di browser.
 
+---
+
+## **Screenshots**
+![alt text](public/home.PNG?raw=true)
+![alt text](public/home2.PNG?raw=true)
+![alt text](public/jatimcard.PNG?raw=true)
+![alt text](public/jatimdetail.PNG?raw=true)
+![alt text](public/aboutus.PNG?raw=true)
 ---
 
 ## Deploy on Vercel
@@ -136,7 +144,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
   ---
 
-  ## **Contact**
+  ## **Kontak**
 hubungi kami jika ada pertanyaan:
 
 - **Email**: mw300306@gmail.com
