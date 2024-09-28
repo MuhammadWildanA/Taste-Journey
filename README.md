@@ -9,13 +9,13 @@
 - [Website](#website)
 - [Kontak](#kontak)
 
-## **perkenalan**
+## **Perkenalan**
 **Taste Journey** 
 website ini mencoba memperkenalkan makanan-makanan lokal Indonesia
 
 ---
 
-## **fitur**
+## **Fitur**
 - **memilih daerah**: user dapat memilih daerah untuk melihat makanan-makanan khas pada daerah tersebut.
   saat ini hanya ada Jawa Timur, Jawa Barat dan Jawa Tengah. Untuk kedepannya kami akan berusaha menambah dan mengembangkan website ini lebih baik dan lebih akurat
 
@@ -55,13 +55,16 @@ setelah melakukan run, server dapat di akses di [http://localhost:3000](http://l
 
 ---
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-
+## **Screenshots**
+![alt text](public/home.PNG?raw=true)
+![alt text](public/home2.PNG?raw=true)
+![alt text](public/jatimcard.PNG?raw=true)
+![alt text](public/jatimdetail.PNG?raw=true)
+![alt text](public/aboutus.PNG?raw=true)
 ---
+
+## **Website**
+https://taste-journey-one.vercel.app/
 
 # website ini kami kembangkan menggunakan 
   - NextJS 
@@ -136,7 +139,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
   ---
 
-  ## **Contact**
+  ## **Kontak**
 hubungi kami jika ada pertanyaan:
 
 - **Email**: mw300306@gmail.com
