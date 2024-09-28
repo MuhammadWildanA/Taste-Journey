@@ -52,8 +52,7 @@ const About = () => {
           />
           <h4 className="text-lg font-semibold text-gray-900">Moch Febriyan Heraldo</h4>
           <p className="text-sm text-gray-500 mt-2">
-          saya adalah seorang software developer yang bersekolah di smkn 1 bangil, saya memiliki beberapa skill seperti editing, desain,  word, excel, html, css, c#, mysql
-          </p>
+          Meskipun peran saya hanyalah NPC, namun di balik layar yang sederhana ini, saya menyimpan impian yang sangat besar. impian untuk menulis kisah saya sendiri dan melampaui batasan yang telah ditetapkan.          </p>
         </div>
       </div>
     </div>
