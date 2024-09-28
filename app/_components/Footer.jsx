@@ -9,7 +9,7 @@ const Footer = () => {
         <h1 className="text-xl font-semibold mb-2">Taste Journey</h1>
         
         {/* Deskripsi */}
-        <p className="text-gray-400 mb-4">
+        <p className="text-gray-400 mb-4 px-3">
         Temukan dunia melalui rasa, satu hidangan, sejuta cerita.
         </p>
         
@@ -33,7 +33,7 @@ const Footer = () => {
         </div>
         
         {/* Copyright */}
-        <div className="text-gray-500 px-2 text-sm">
+        <div className="text-gray-500 px-3 text-sm ">
           Copyright ©2024 Taste Journey. Design by <a href="#" className="text-white">Jawara Team</a>
         </div>
       </div>

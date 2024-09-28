@@ -24,7 +24,7 @@ const JourneyDetail = ({ params }) => {
 
   return (
     <div
-      className="min-h-screen overflow-hidden dark:bg-gray-900 text-white dark:text-gray-100"
+      className="min-h-screen py-4 overflow-hidden dark:bg-gray-900 text-white dark:text-gray-100"
       style={{
         backgroundImage: `url(${prov.image})`,
         backgroundSize: "cover",

@@ -22,7 +22,7 @@ const JourneyDetails = ({ params }) => {
       {prov.makanan.map((item, index) => (
         <div
           key={index}
-          className={`w-full py-5 flex items-center flex-col md:flex-row gap-5 px-28 ${
+          className={`w-full py-5 flex items-center flex-col md:flex-row gap-5 px-7 ${
             index % 2 === 0 ? "" : "md:flex-row-reverse"
           }`}
         >

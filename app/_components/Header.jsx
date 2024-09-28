@@ -313,7 +313,7 @@ const Header = () => {
               </div>
               <div className="py-6 text-center">
                 <a
-                  href="#"
+                  href="/about-us"
                   className="text-xl font-bold leading-6  text-gray-950"
                 >
                   Jawara
